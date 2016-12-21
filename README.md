@@ -2,72 +2,72 @@
 
 PYTHON + DJANGO
 
-checar versao python
+<p>checar versao python</p>
 	python --version
-criar ambiente virtual
+<p>criar ambiente virtual</p>
 	py -m venv
-entrar no ambiente
+<p>entrar no ambiente </p>
 	[nome do ambiente]\Scripts\activate.bat
-instalar django
+<p>instalar django</p>
 	pip install django
-iniciar projeto 
+<p>iniciar projeto</p>
 	django-admin startproject [nome do projeto] .
-testar inicialização
+<p>testar inicialização</p>
 	python manage.py runserver
-inicializar aplicação
+<p>inicializar aplicação</p>
 	python manage.py startapp [nome da aplicacao]
 
-adicionar [nome do projeto].[nome da app] em INSTALLED_APPS em settings.py
-adicionar from [nome do projeto].[nome da app] import views as [nome da view]
-adicionar url(r'^$', [nome da view].home) em urls.py
-criar função home em core > views.py
-criar pasta "templates" em core
-criar arquivo "index.html" em templates
-criar pasta "static" em core
-Opcional:	adicionar tag "{% load static %}" na primeira linha do index.html
+<p>adicionar [nome do projeto].[nome da app] em INSTALLED_APPS em settings.py<p>
+<p>adicionar from [nome do projeto].[nome da app] import views as [nome da view]</p>
+<p>adicionar url(r'^$', [nome da view].home) em urls.py</p>
+<p>criar função home em core > views.py</p>
+<p>criar pasta "templates" em core</p>
+<p>criar arquivo "index.html" em templates</p>
+<p>criar pasta "static" em core</p>
+<p>Opcional:	adicionar tag "{% load static %}" na primeira linha do index.html</p>
 
 
 HEROKU
 
-baixar, criar conta e logar
-instalar decouple
+<p>baixar, criar conta e logar</p>
+<p>instalar decouple</p>
 	pip install python-decouple
-adicionar from decouple import config em settings.py
-adicionar SECRET_KEY = config('SECRET_KEY') em settings.py após SECRET_KEY...
-adicionar DEBUG = config('DEBUG', default = false, cast = bool) em settings.py após DEBUG...
-criar ".env" na pasta do projeto
-mover as linhas antigas de secret_key e debug para o arquivo .env
-instalar dj-database-url
+<p>adicionar from decouple import config em settings.py</p>
+<p>adicionar SECRET_KEY = config('SECRET_KEY') em settings.py após SECRET_KEY...</p>
+<p>adicionar DEBUG = config('DEBUG', default = false, cast = bool) em settings.py após DEBUG...</p>
+<p>criar ".env" na pasta do projeto</p>
+<p>mover as linhas antigas de secret_key e debug para o arquivo .env</p>
+<p>instalar dj-database-url</p>
 	pip install dj-database-url
-adicionar from dj_database_url import parse as dburl em settings.py
-modificar valor 'default' em DATABASES =... em settings.py para config('DATABASE_URL', default = default_dburl, cast = dburl)
-adicionar STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') apos STATIC_URL... em settings.py
-instalar dj-static
+<p>adicionar from dj_database_url import parse as dburl em settings.py</p>
+<p>modificar valor 'default' em DATABASES =... em settings.py para config('DATABASE_URL', default = default_dburl, cast = dburl)</p>
+<p>adicionar STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') apos STATIC_URL... em settings.py</p>
+<p>instalar dj-static</p>
 	pip install dj-static
-adicionar from dj_static import Cling em wsgi.py
-modificar application = get_wsgi_application() para application = Cling(get_wsgi_application()) em wsgi.py
-criar arquivo requirements.txt na raiz do projeto
-adicionar resultado do comando pip freeze no arquivo
-adicionar gunicorn==19.4.1 e psycopg2==2.6.1 no arquivo requirements.txt
-criar arquivo Procfile na pasta raiz
-adicionar web: gunicorn [nome do projeto].wsgi --log-file - no arquivo Profile
-criar arquivo runtime.txt na pasta raiz
-adicionar versão do python ao arquivo runtime.txt (python --version no cmd)
-inicializar git
+<p>adicionar from dj_static import Cling em wsgi.py</p>
+<p>modificar application = get_wsgi_application() para application = Cling(get_wsgi_application()) em wsgi.py</p>
+<p>criar arquivo requirements.txt na raiz do projeto</p>
+<p>adicionar resultado do comando pip freeze no arquivo</p>
+<p>adicionar gunicorn==19.4.1 e psycopg2==2.6.1 no arquivo requirements.txt</p>
+<p>criar arquivo Procfile na pasta raiz</p>
+<p>adicionar web: gunicorn [nome do projeto].wsgi --log-file - no arquivo Profile</p>
+<p>criar arquivo runtime.txt na pasta raiz</p>
+<p>adicionar versão do python ao arquivo runtime.txt (python --version no cmd)</p>
+<p>inicializar git</p>
 	git init
-criar .gitignore
-adicionar arquivos a serem ignorados pelo git
+<p>criar .gitignore</p>
+<p>adicionar arquivos a serem ignorados pelo git</p>
 	.env
 	.ambiente
 	*.sqlite3
 	*.pyc
 	__pycache__
-commita os arquivos
+<p>commita os arquivos</p>
 	git add .
 	git commit -m "[mensagem aqui]"
-configurar variaveis de ambiente
+<p>configurar variaveis de ambiente</p>
 	heroku plugins:install heroku-config
 	heroku config:push
 	(ao dar erro em alguma das variaveis, troca a ordem delas e faz o heroku config:push dnovo)
-pusha os arquivos para o heroku
+<p>pusha os arquivos para o heroku</p>
 	git push heroku master
