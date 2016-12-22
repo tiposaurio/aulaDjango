@@ -20,10 +20,12 @@ PYTHON + DJANGO
 <p>adicionar [nome do projeto].[nome da app] em INSTALLED_APPS em settings.py<p>
 <p>adicionar from [nome do projeto].[nome da app] import views as [nome da view]</p>
 <p>adicionar url(r'^$', [nome da view].home) em urls.py</p>
-<p>criar função home em core > views.py</p>
-<p>criar pasta "templates" em core</p>
+<p>criar função home em [nome da app] > views.py</p>
+	def home(request):
+		return render(request, 'index.html')
+<p>criar pasta "templates" em [nome da app]</p>
 <p>criar arquivo "index.html" em templates</p>
-<p>criar pasta "static" em core</p>
+<p>criar pasta "static" em [nome da app]</p>
 <p>Opcional:	adicionar tag "{% load static %}" na primeira linha do index.html</p>
 
 
