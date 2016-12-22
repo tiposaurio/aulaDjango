@@ -1,6 +1,4 @@
-# aulaDjango
-
-PYTHON + DJANGO
+<h1>PYTHON + DJANGO</h1>
 
 <p>checar versao python</p>
 	python --version
@@ -16,9 +14,9 @@ PYTHON + DJANGO
 	python manage.py runserver
 <p>inicializar aplicação</p>
 	python manage.py startapp [nome da aplicacao]
-
+<p>mover pasta da apliacação para dentro da pasta do projeto</p>
 <p>adicionar [nome do projeto].[nome da app] em INSTALLED_APPS em settings.py<p>
-<p>adicionar from [nome do projeto].[nome da app] import views as [nome da view]</p>
+<p>adicionar from [nome do projeto].[nome da app] import views as [nome da view] em urls.py</p>
 <p>adicionar url(r'^$', [nome da view].home) em urls.py</p>
 <p>criar função home em [nome da app] > views.py</p>
 	def home(request):
@@ -29,14 +27,15 @@ PYTHON + DJANGO
 <p>Opcional:	adicionar tag "{% load static %}" na primeira linha do index.html</p>
 
 
-HEROKU
+<h1>HEROKU</h1>
 
 <p>baixar, criar conta e logar</p>
+	https://devcenter.heroku.com/articles/heroku-cli
 <p>instalar decouple</p>
 	pip install python-decouple
 <p>adicionar from decouple import config em settings.py</p>
 <p>adicionar SECRET_KEY = config('SECRET_KEY') em settings.py após SECRET_KEY...</p>
-<p>adicionar DEBUG = config('DEBUG', default = false, cast = bool) em settings.py após DEBUG...</p>
+<p>adicionar DEBUG = config('DEBUG', default=False, cast=bool) em settings.py após DEBUG...</p>
 <p>criar ".env" na pasta do projeto</p>
 <p>mover as linhas antigas de secret_key e debug para o arquivo .env</p>
 <p>instalar dj-database-url</p>
@@ -64,6 +63,7 @@ HEROKU
 	*.sqlite3
 	*.pyc
 	__pycache__
+	Procfile
 <p>commita os arquivos</p>
 	git add .
 	git commit -m "[mensagem aqui]"
@@ -71,5 +71,7 @@ HEROKU
 	heroku plugins:install heroku-config
 	heroku config:push
 	(ao dar erro em alguma das variaveis, troca a ordem delas e faz o heroku config:push dnovo)
+<p>criar projeto no heroku</p>
+	heroku create [nome do projeto]
 <p>pusha os arquivos para o heroku</p>
 	git push heroku master
