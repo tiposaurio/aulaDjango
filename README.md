@@ -5,7 +5,7 @@ PYTHON + DJANGO
 <p>checar versao python</p>
 	python --version
 <p>criar ambiente virtual</p>
-	py -m venv [nome da pasta]
+	py -m venv [nome do ambiente]
 <p>entrar no ambiente </p>
 	[nome do ambiente]\Scripts\activate.bat
 <p>instalar django</p>
